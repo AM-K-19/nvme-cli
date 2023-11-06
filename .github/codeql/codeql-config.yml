@@ -1,3 +1,4 @@
-name: "CodeQL Config"
-paths-ignore:
-  - subprojects/**
+- if: matrix.language == 'python'
+  name: "CodeQL Config"
+  paths-ignore:
+    - subprojects/**
