@@ -51,7 +51,7 @@ jobs:
       name: Initialize CodeQL C
       uses: github/codeql-action/init@v2
       with:
-          languages: 'c-cpp'
+        languages: 'c-cpp'
 
     - if: matrix.language == 'python'
       name: Initialize CodeQL Python
