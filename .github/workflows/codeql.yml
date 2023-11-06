@@ -47,22 +47,19 @@ jobs:
           sudo apt-get install meson
 
     # Initializes the CodeQL tools for scanning.
-    - name: Initialize CodeQL C
+    - if: matrix.language == 'c-cpp'
+      name: Initialize CodeQL C
       uses: github/codeql-action/init@v2
-
       with:
-        languages: 'c-cpp'
+          languages: 'c-cpp'
 
-    - name: Initialize CodeQL Python
+    - if: matrix.language == 'python'
+      name: Initialize CodeQL Python
       uses: github/codeql-action/init@v2
-  
       with:
         languages: 'python'
         config-file: ./.github/codeql/codeql-config.yml
   
-
-
-
     - name: meson build
       run: |
          meson setup --force-fallback-for=libnvme .build
