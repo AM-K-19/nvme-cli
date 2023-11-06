@@ -54,11 +54,11 @@ jobs:
         languages: 'c-cpp'
 
     - name: Initialize CodeQL Python
-        uses: github/codeql-action/init@v2
+      uses: github/codeql-action/init@v2
   
-        with:
-          languages: 'python'
-          config-file: ./.github/codeql/codeql-config.yml
+      with:
+        languages: 'python'
+        config-file: ./.github/codeql/codeql-config.yml
   
 
 
